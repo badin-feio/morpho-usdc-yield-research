@@ -44,20 +44,20 @@ Published version: <https://dune.com/queries/8715535/>
 **2. Borrowing (the denominator).**
 
 ```
-python fetch_usdc_markets.py      # ~3,900 markets, daily borrowing, ~15 min
-python denominator.py             # average borrowing per chain
+python scripts/fetch_usdc_markets.py   # ~3,900 markets, daily borrowing, ~15 min
+python scripts/denominator.py          # average borrowing per chain
 ```
 
-`fetch_usdc_markets.py` pages through Morpho's GraphQL API for every market
+`scripts/fetch_usdc_markets.py` pages through Morpho's GraphQL API for every market
 whose loan asset is USDC, then pulls each market's daily `borrowAssets`
-series. `denominator.py` aligns the series to a common date index, drops two
+series. `scripts/denominator.py` aligns the series to a common date index, drops two
 frozen markets whose recorded borrowing is unpaid interest compounding at the
 maximum rate, and reports the average.
 
 **3. What depositors actually earned.**
 
 ```
-python vault_realized_yield.py
+python scripts/vault_realized_yield.py
 ```
 
 Reads daily share prices and sizes for every USDC vault, computes each
@@ -68,7 +68,7 @@ the vaults have recognized, and excludes reward tokens.
 **4. Figures.**
 
 ```
-python make_figures.py
+python scripts/make_figures.py
 ```
 
 ## Data
@@ -90,3 +90,6 @@ the three-month Treasury yield (FRED series `DGS3MO`), saved as
 ## Requirements
 
 Python 3.9+, with `pandas`, `requests` and `matplotlib`.
+
+Run the scripts from the repository root, so that the relative paths to
+`data/` and `figures/` resolve.
