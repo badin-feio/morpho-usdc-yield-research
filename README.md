@@ -1,7 +1,7 @@
 # What DeFi rates should be, measured on Morpho
 
-Code and queries behind the note *What DeFi Rates Should Be, Measured on
-Morpho* (link to be added). The note takes Tom Dunleavy's bond-math
+Code and queries behind the note
+[*What DeFi Rates Should Be, Measured on Morpho*](what-defi-rates-should-be-measured-on-morpho.pdf). The note takes Tom Dunleavy's bond-math
 decomposition of a DeFi lending yield and measures the credit-loss term
 on-chain instead of assuming it, for USDC lending on Morpho on Ethereum
 and Base, April 2024 to September 2026.
